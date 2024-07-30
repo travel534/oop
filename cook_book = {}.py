@@ -37,20 +37,20 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 #print(get_shop_list_by_dishes(['Омлет'],1))
 #3 задание
-name =  ['1.txt','2.txt', '3.txt']
+names =  ['1.txt','2.txt','3.txt']
 f_list = []
-for i in name:
-    with open(i, encoding='utf-8') as f:  
-            l_1 = f.readlines()           
+for name in names:
+    with open(name, encoding='utf-8') as f:
+            l_1 = f.readlines()
             num_lines = len(l_1)
-            f_list.append([name[0], num_lines, l_1])
+            f_list.append([num_lines, name, l_1])
 
 f_list.sort()
-print(f_list)
+
 with open('task.txt', 'w', encoding='utf-8') as f:
+    
     for i in f_list:
-        f.write(f'{i[0]} \n')
-        f.write(f'{i[1]} \n')
+        
+        f.write(f'{i[1]}\n')
+        f.write(f'{i[0]}\n')
         f.write(''.join(i[2]) + '\n')
-        
-        
